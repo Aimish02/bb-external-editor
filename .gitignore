@@ -141,6 +141,6 @@ build/
 !.vscode/launch.json
 
 #File to ignore
-.servers/home/data
-.servers/home/hackSortedList.json
-.servers/home/optSortedList.json
+servers/home/data
+servers/home/hackSortedList.json
+servers/home/optSortedList.json
