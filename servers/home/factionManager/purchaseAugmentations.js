@@ -1,4 +1,4 @@
-// servers/home/factionManager/V01/purchaseAugmentations.js
+// servers/home/factionManager/purchaseAugmentations.js
 async function main(ns) {
   let debug = false;
   let player = ns.getPlayer();
@@ -40,7 +40,7 @@ async function main(ns) {
     ns.tprint("Singularity Runtime: " + singularityRuntime);
   }
   if (augmentationRatio > 25 || ns.getServerMoneyAvailable("home") > 25 * 10 ^ 12 && !playerAugmentations.includes("QLink") || singularityRuntime > 3600 * 3) {
-    await ns.run("factionManager/V01/purchaseNeuroFluxGovernors.js");
+    await ns.run("factionManager/purchaseNeuroFluxGovernors.js");
     ns.singularity.installAugmentations("sing-controller/sing-controller.js");
   }
 }

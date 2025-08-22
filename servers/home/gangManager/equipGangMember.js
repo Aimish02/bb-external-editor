@@ -1,4 +1,4 @@
-// servers/home/gangManager/V02/equipGangMember.js
+// servers/home/gangManager/equipGangMember.js
 async function main(ns) {
   let name = ns.args[0];
   let equipList = ns.gang.getEquipmentNames();

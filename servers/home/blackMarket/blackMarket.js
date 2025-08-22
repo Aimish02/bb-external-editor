@@ -1,4 +1,4 @@
-// servers/home/blackMarket/V01/blackMarket.js
+// servers/home/blackMarket/blackMarket.js
 async function main(ns) {
   ns.singularity.purchaseTor();
   let darkWebPrograms = ns.singularity.getDarkwebPrograms();

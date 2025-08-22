@@ -1,11 +1,11 @@
-// servers/home/playerManager/V01/playerFactionRepFocus.js
+// servers/home/playerManager/playerFactionRepFocus.js
 async function main(ns) {
   let debug = true;
   if (debug == true) {
     ns.tprint("DEBUG: Player focus is faction reputation gain.");
   }
   ns.clearPort(1);
-  await ns.run("playerManager/V01/pickFactionTarget.js");
+  await ns.run("playerManager/pickFactionTarget.js");
   let portPeek = ns.peek(1);
   if (portPeek["handshake"] != "factionTarget") {
     ns.tprint("Error -----");

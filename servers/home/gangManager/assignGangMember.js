@@ -1,4 +1,4 @@
-// servers/home/gangManager/V02/assignGangMember.js
+// servers/home/gangManager/assignGangMember.js
 async function main(ns) {
   let name = ns.args[0];
   let twTime = Number(JSON.parse(ns.read("data/twTime.json")));

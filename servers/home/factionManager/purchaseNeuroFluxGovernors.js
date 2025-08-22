@@ -1,4 +1,4 @@
-// servers/home/factionManager/V01/purchaseNeuroFluxGovernors.js
+// servers/home/factionManager/purchaseNeuroFluxGovernors.js
 async function main(ns) {
   let player = ns.getPlayer();
   let playerFactions = player.factions;

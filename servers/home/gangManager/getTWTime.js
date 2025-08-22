@@ -1,4 +1,4 @@
-// servers/home/gangManager/V02/getTWTime.js
+// servers/home/gangManager/getTWTime.js
 async function main(ns) {
   let twTime = 0;
   while (twTime == 0) {

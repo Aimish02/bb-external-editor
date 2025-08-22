@@ -1,4 +1,4 @@
-// servers/home/playerManager/V01/playerPrioritiesConstructor.js
+// servers/home/playerManager/playerPrioritiesConstructor.js
 async function main(ns) {
   let debug = false;
   if (ns.fileExists("data/playerPriorities.json")) {

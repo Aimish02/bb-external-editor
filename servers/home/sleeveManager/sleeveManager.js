@@ -1,4 +1,4 @@
-// servers/home/sleeveManager/v01/sleeveManager.js
+// servers/home/sleeveManager/sleeveManager.js
 async function main(ns) {
   let debug = false;
   let sleeveNumber = ns.sleeve.getNumSleeves();

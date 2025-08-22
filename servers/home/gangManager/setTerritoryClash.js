@@ -1,4 +1,4 @@
-// servers/home/gangManager/V02/setTerritoryClash.js
+// servers/home/gangManager/setTerritoryClash.js
 async function main(ns) {
   let debug = false;
   let otherGangInfo = ns.gang.getOtherGangInformation();

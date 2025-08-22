@@ -3,8 +3,8 @@ async function main(ns) {
   let host = ns.getHostname();
   ns.run("scanner/scanner.js");
   ns.run("nuker/nuker.js");
-  ns.run("sleeveManager/v01/sleeveManager.js");
-  ns.run("playerManager/V01/playerManager.js");
+  ns.run("sleeveManager/sleeveManager.js");
+  ns.run("playerManager/playerManager.js");
   let actionTimers = {};
   actionTimers["scanner"] = Math.random() * 120 + 60;
   actionTimers["nuker"] = Math.random() * 120 + 60;
@@ -27,12 +27,12 @@ async function main(ns) {
   timedActions["batchManager"] = getTimedAction("batchManager/batchManager.js", actionTimers["batchManager"]);
   timedActions["purchaseServers"] = getTimedAction("purchaseServers/purchaseServers.js", actionTimers["purchaseServers"]);
   timedActions["bladeBurner"] = getTimedAction("bladeBurner/bladeBurner.js", actionTimers["bladeBurner"]);
-  timedActions["gangManager"] = getTimedAction("gangManager/V02/gangManager.js", actionTimers["gangManager"]);
-  timedActions["factionManager"] = getTimedAction("factionManager/V01/factionManager.js", actionTimers["factionManager"]);
-  timedActions["blackMarket"] = getTimedAction("blackMarket/V01/blackMarket.js", actionTimers["blackMarket"]);
+  timedActions["gangManager"] = getTimedAction("gangManager/gangManager.js", actionTimers["gangManager"]);
+  timedActions["factionManager"] = getTimedAction("factionManager/factionManager.js", actionTimers["factionManager"]);
+  timedActions["blackMarket"] = getTimedAction("blackMarket/blackMarket.js", actionTimers["blackMarket"]);
   timedActions["backdoor"] = getTimedAction("backdoor/backdoor.js", actionTimers["backdoor"]);
-  timedActions["sleeveManager"] = getTimedAction("sleeveManager/v01/sleeveManager.js", actionTimers["sleeveManager"]);
-  timedActions["playerManager"] = getTimedAction("playerManager/V01/playerManager.js", actionTimers["playerManager"]);
+  timedActions["sleeveManager"] = getTimedAction("sleeveManager/sleeveManager.js", actionTimers["sleeveManager"]);
+  timedActions["playerManager"] = getTimedAction("playerManager/playerManager.js", actionTimers["playerManager"]);
   while (true) {
     let keys = Object.keys(timedActions);
     for (let key of keys) {

@@ -1,4 +1,4 @@
-// servers/home/factionManager/V01/joinFactions.js
+// servers/home/factionManager/joinFactions.js
 async function main(ns) {
   let debug = false;
   if (debug == true) ns.tprint("Joining Factions.");

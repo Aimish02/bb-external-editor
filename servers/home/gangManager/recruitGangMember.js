@@ -1,4 +1,4 @@
-// servers/home/gangManager/V02/recruitGangMember.js
+// servers/home/gangManager/recruitGangMember.js
 async function main(ns) {
   ns.gang.recruitMember("GM_1");
   let myGang = ns.gang.getGangInformation();

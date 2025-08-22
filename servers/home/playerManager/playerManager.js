@@ -1,7 +1,7 @@
-// servers/home/playerManager/V01/playerManager.js
+// servers/home/playerManager/playerManager.js
 async function main(ns) {
   let debug = true;
-  ns.run("playerManager/V01/playerPrioritiesConstructor.js");
+  ns.run("playerManager/playerPrioritiesConstructor.js");
   let playerPriorities = JSON.parse(ns.read("data/playerPriorities.json"));
   if (debug == true) {
     ns.tprint("DEBUG: ----------");
@@ -18,7 +18,7 @@ async function main(ns) {
     if (debug == true) {
       ns.tprint("Player Priority: Faction Rep");
     }
-    ns.run("playerManager/V01/playerFactionRepFocus.js");
+    ns.run("playerManager/playerFactionRepFocus.js");
   }
   if (playerPriorities["bladeburner"]) {
     if (debug == true) {

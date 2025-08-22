@@ -1,4 +1,4 @@
-// servers/home/playerManager/V01/pickFactionTarget.js
+// servers/home/playerManager/pickFactionTarget.js
 async function main(ns) {
   let debug = false;
   let targetFaction = {};

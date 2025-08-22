@@ -1,4 +1,4 @@
-// servers/home/gangManager/V02/ascendGangMember.js
+// servers/home/gangManager/ascendGangMember.js
 async function main(ns) {
   let name = ns.args[0];
   if (shouldAscendGangMember(ns, name)) {
