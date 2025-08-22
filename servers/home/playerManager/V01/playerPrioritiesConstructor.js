@@ -1,12 +1,12 @@
 // servers/home/playerManager/V01/playerPrioritiesConstructor.js
 async function main(ns) {
   let debug = false;
-  if (ns.fileExists("playerManager/playerPriorities.json")) {
+  if (ns.fileExists("data/playerPriorities.json")) {
     if (debug == true) {
       ns.tprint("DEBUG: Player Priorities exists");
     }
     ;
-    let importedPlayerPriorities = JSON.parse(ns.read("playerManager/playerPriorities.json"));
+    let importedPlayerPriorities = JSON.parse(ns.read("data/playerPriorities.json"));
     if (importedPlayerPriorities["resetPlayerPriorities"] == true) {
       if (debug = true) {
         ns.tprint("DEBUG: Reseting player priorities file.");
@@ -28,7 +28,7 @@ async function main(ns) {
   }
   ;
   let playerPrioritiesJSON = JSON.stringify(playerPriorities);
-  ns.write("playerManager/playerPriorities.json", playerPrioritiesJSON, "w");
+  ns.write("data/playerPriorities.json", playerPrioritiesJSON, "w");
 }
 export {
   main

@@ -1,7 +1,7 @@
 // servers/home/nuker/nuker.js
 async function main(ns) {
   ns.tprint("Nuker Running.");
-  let servList = JSON.parse(ns.read("optSortedList.json"));
+  let servList = JSON.parse(ns.read("data/optSortedList.json"));
   let hackablePorts = 0;
   if (ns.fileExists("BruteSSH.exe")) {
     hackablePorts++;

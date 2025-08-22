@@ -142,5 +142,3 @@ build/
 
 #File to ignore
 servers/home/data
-servers/home/hackSortedList.json
-servers/home/optSortedList.json

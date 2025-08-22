@@ -19,10 +19,10 @@ async function main(ns) {
   }
   let hackSortedList = serverList.sort(reqHackSort);
   let hackSortedJson = JSON.stringify(hackSortedList);
-  ns.write("hackSortedList.json", hackSortedJson, "w");
+  ns.write("data/hackSortedList.json", hackSortedJson, "w");
   let optSortedList = serverList.sort(moneyToSecRatioSort);
   let optSortedJson = JSON.stringify(optSortedList);
-  ns.write("optSortedList.json", optSortedJson, "w");
+  ns.write("data/optSortedList.json", optSortedJson, "w");
   ns.tprint("Scan files updated.");
   function reqHackSort(a, b) {
     let reqHackA = ns.getServerRequiredHackingLevel(a);
