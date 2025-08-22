@@ -1,0 +1,3 @@
+Done 20250822 - Delete Legacy Files - 20250822
+Done 20250822 - Scrub scripts to make sure all point to the new data folder - 20250822
+Scrub scipts to remove version Folders - 20250822

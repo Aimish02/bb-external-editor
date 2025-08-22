@@ -1,7 +1,7 @@
 // servers/home/backdoor/backdoor.js
 async function main(ns) {
   let debug = false;
-  let servList = JSON.parse(ns.read("hackSortedList.json"));
+  let servList = JSON.parse(ns.read("data/hackSortedList.json"));
   if (debug == true) {
     ns.tprint("servList: " + servList);
   }

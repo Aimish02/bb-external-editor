@@ -8,7 +8,7 @@ async function main(ns) {
     if (startPwr != endPwr) {
       twTime = Date.now();
       ns.tprint("twTime:" + twTime);
-      ns.write("twTime.json", twTime, "w");
+      ns.write("data/twTime.json", twTime, "w");
       return;
     }
   }

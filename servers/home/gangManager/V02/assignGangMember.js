@@ -1,7 +1,7 @@
 // servers/home/gangManager/V02/assignGangMember.js
 async function main(ns) {
   let name = ns.args[0];
-  let twTime = Number(JSON.parse(ns.read("twTime.json")));
+  let twTime = Number(JSON.parse(ns.read("data/twTime.json")));
   let gangInfo = ns.gang.getGangInformation();
   let timeToTW = (Date.now() - twTime) % 2e4;
   let memberInfo = ns.gang.getMemberInformation(name);

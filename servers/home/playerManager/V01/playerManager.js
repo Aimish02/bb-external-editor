@@ -2,7 +2,7 @@
 async function main(ns) {
   let debug = true;
   ns.run("playerManager/V01/playerPrioritiesConstructor.js");
-  let playerPriorities = JSON.parse(ns.read("playerManager/playerPriorities.json"));
+  let playerPriorities = JSON.parse(ns.read("data/playerPriorities.json"));
   if (debug == true) {
     ns.tprint("DEBUG: ----------");
     ns.tprint(playerPriorities);

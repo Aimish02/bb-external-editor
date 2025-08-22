@@ -3,7 +3,7 @@ async function main(ns) {
   let debug = false;
   let batchDelay = 20;
   let player = ns.getPlayer();
-  let serverList = JSON.parse(ns.read("optSortedList.json"));
+  let serverList = JSON.parse(ns.read("data/optSortedList.json"));
   let target = chooseTarget(serverList);
   let targetServ = ns.getServer(target);
   let dtHack = ns.formulas.hacking.hackTime(targetServ, player);

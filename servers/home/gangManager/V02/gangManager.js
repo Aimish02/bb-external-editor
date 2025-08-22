@@ -9,16 +9,16 @@ async function main(ns) {
   }
   let singularityRunningScript = ns.getRunningScript("sing-controller/sing-controller.js", "home");
   let singularityRuntime = singularityRunningScript.onlineRunningTime * 1e3;
-  let twTime = Number(JSON.parse(ns.read("twTime.json")));
+  let twTime = Number(JSON.parse(ns.read("data/twTime.json")));
   if (ns.gang.inGang()) {
     myGang = ns.gang.getGangInformation();
-    if (!ns.fileExists("twTime.json") && !ns.isRunning("gangManager/V02/getTWTime.js")) {
+    if (!ns.fileExists("data/twTime.json") && !ns.isRunning("gangManager/V02/getTWTime.js")) {
       await ns.run("gangManager/V02/getTWTime.js");
       ns.tprint("File Missing: Running getTWTime.js");
-    } else if (singularityRuntime < Date.now() - Number(JSON.parse(ns.read("twTime.json"))) && !ns.isRunning("gangManager/V02/getTWTime.js")) {
+    } else if (singularityRuntime < Date.now() - Number(JSON.parse(ns.read("data/twTime.json"))) && !ns.isRunning("gangManager/V02/getTWTime.js")) {
       await ns.run("gangManager/V02/getTWTime.js");
       ns.tprint("Controller Runtime: " + singularityRuntime);
-      ns.tprint("Controller Time since file creation: " + (Date.now() - Number(JSON.parse(ns.read("twTime.json")))));
+      ns.tprint("Controller Time since file creation: " + (Date.now() - Number(JSON.parse(ns.read("data/twTime.json")))));
       ns.tprint("File out of date: Running getTWTime.js");
     }
   } else if (!ns.gang.inGang()) {
