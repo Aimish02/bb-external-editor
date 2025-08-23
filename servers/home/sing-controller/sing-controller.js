@@ -22,6 +22,7 @@ export async function main(ns) {
   timedActions["backdoor"] = getTimedAction("backdoor/backdoor.js", Math.random() * 60 + 300);
   timedActions["sleeveManager"] = getTimedAction("sleeveManager/sleeveManager.js", Math.random() * 60);
   timedActions["playerManager"] = getTimedAction("playerManager/playerManager.js", Math.random() * 60 + 300);
+  timedActions["upgradeHomeServer"] = getTimedAction("upgradeHomeServer/upgradeHomeServer.js", Math.random() * 120 + 300);
   //----------
 
 
