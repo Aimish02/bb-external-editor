@@ -4,3 +4,6 @@ Done 20250822 - Scrub scipts to remove version Folders - 20250822
 Done 20250823 - Player and Sleeve Data Collectors - 20250823
 Done 20250823 -  Write Script to automate upgrading the home server
 Done 20250823 - Add upgradeHomeServer script to sing-controller.js
+TODO - Check neuroflux governor script to make sure it buys multiple augments
+TODO - optimize the following scripts for ram: pick faction target, purchase augments, purchace neuroflux governors
+Done 20250823 -  Debug gangManager.js 

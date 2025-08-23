@@ -1,5 +1,5 @@
 // servers/home/gangManager/getTWTime.js
-async function main(ns) {
+export async function main(ns) {
   let twTime = 0;
   while (twTime == 0) {
     let startPwr = ns.gang.getOtherGangInformation()["The Black Hand"].power;
@@ -8,11 +8,9 @@ async function main(ns) {
     if (startPwr != endPwr) {
       twTime = Date.now();
       ns.tprint("twTime:" + twTime);
-      ns.write("data/twTime.json", twTime, "w");
+      ns.write("data/twTime.txt", twTime, "w");
       return;
     }
   }
 }
-export {
-  main
-};
+
