@@ -34,6 +34,4 @@ async function main(ns) {
     }
   }
 }
-export {
-  main
-};
+
