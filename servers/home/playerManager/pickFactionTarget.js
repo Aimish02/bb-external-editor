@@ -59,7 +59,7 @@ async function main(ns) {
     let currentFaction = downselectedFactions[i];
     let augmentList = playerLackingAugments[currentFaction];
     let augmentsToRemove = [];
-    if (debug = true) {
+    if (debug == true) {
       ns.tprint("----------");
       ns.tprint("DEBUG: Second downselect.");
       ns.tprint("DEBUG: Current Faction: " + currentFaction);
@@ -72,7 +72,7 @@ async function main(ns) {
       if (filteredSuppliers.length > 1) {
         augmentsToRemove.push(augment);
       }
-      if (debug = true) {
+      if (debug == true) {
         ns.tprint("DEBUG: Augment: " + augment);
         ns.tprint("DEBUG: Augment Suppliers: " + augmentSuppliers);
         ns.tprint("DEBUG: Filtered suppliers: " + filteredSuppliers);

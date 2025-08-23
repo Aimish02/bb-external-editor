@@ -1,6 +1,6 @@
 // servers/home/playerManager/playerManager.js
 async function main(ns) {
-  let debug = true;
+  let debug = false;
   ns.run("playerManager/playerPrioritiesConstructor.js");
   let playerPriorities = JSON.parse(ns.read("data/playerPriorities.json"));
   if (debug == true) {
