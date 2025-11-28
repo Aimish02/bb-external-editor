@@ -1,22 +1,25 @@
 // servers/home/playerManager/playerFactionRepFocus.js
 async function main(ns) {
-  let debug = true;
+  let debug = false;
+  ns.disableLog("ALL");
+  if (debug == true){ns.ui.openTail();}
+
   if (debug == true) {
-    ns.tprint("DEBUG: Player focus is faction reputation gain.");
+    ns.print("DEBUG: Player focus is faction reputation gain.");
   }
   ns.clearPort(1);
   await ns.run("playerManager/pickFactionTarget.js");
   let portPeek = ns.peek(1);
   if (portPeek["handshake"] != "factionTarget") {
-    ns.tprint("Error -----");
-    ns.tprint("Incorrect data on port 1.");
-    ns.tprint(portPeek);
-    ns.tprint("Error -----");
+    ns.print("Error -----");
+    ns.print("Incorrect data on port 1.");
+    ns.print(portPeek);
+    ns.print("Error -----");
     return;
   }
   let targetFaction = ns.readPort(1);
   if (debug == true) {
-    ns.tprint("DEBUG: Target Faction is " + targetFaction["data"]);
+    ns.print("DEBUG: Target Faction is " + targetFaction["data"]);
   }
   ;
   try {

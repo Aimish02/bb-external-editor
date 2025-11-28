@@ -1,5 +1,9 @@
 // servers/home/blackMarket/blackMarket.js
 async function main(ns) {
+
+let debug = false;
+if (debug == true) {ns.ui.openTail();}
+
   ns.singularity.purchaseTor();
   let darkWebPrograms = ns.singularity.getDarkwebPrograms();
   for (let i in darkWebPrograms) {
@@ -8,7 +12,7 @@ async function main(ns) {
     let playerMoney = ns.getServerMoneyAvailable("home");
     if (!ns.fileExists(program) && playerMoney > programCost) {
       ns.singularity.purchaseProgram(program);
-      ns.tprint("Purchased " + program + " from the dark web.");
+      ns.print("Purchased " + program + " from the dark web.");
     }
     ;
   }

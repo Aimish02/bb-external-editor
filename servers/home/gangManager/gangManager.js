@@ -1,5 +1,9 @@
 // servers/home/gangManager/gangManager.js
 export async function main(ns) {
+
+let debug = false;
+if (debug == true) {ns.ui.openTail();}
+
   let gangToJoin = ns.args[0] || "Slum Snakes";
   let myGang;
   let memberList;
@@ -18,14 +22,14 @@ export async function main(ns) {
     myGang = ns.gang.getGangInformation();
     if (!ns.fileExists("data/twTime.txt") && !ns.isRunning("gangManager/getTWTime.js")) {
       await ns.run("gangManager/getTWTime.js");
-      ns.tprint("File Missing: Running getTWTime.js");
+      ns.print("File Missing: Running getTWTime.js");
     } 
     twTime = Number(JSON.parse(ns.read("data/twTime.txt")))
     if (singularityRuntime < (Date.now() - twTime) && !ns.isRunning("gangManager/getTWTime.js")) {
       await ns.run("gangManager/getTWTime.js");
-      ns.tprint("Controller Runtime: " + singularityRuntime);
-      ns.tprint("Controller Time since file creation: " + (Date.now() - twTime));
-      ns.tprint("File out of date: Running getTWTime.js");
+      ns.print("Controller Runtime: " + singularityRuntime);
+      ns.print("Controller Time since file creation: " + (Date.now() - twTime));
+      ns.print("File out of date: Running getTWTime.js");
       twTime = Number(JSON.parse(ns.read("data/twTime.txt")))
     }
 

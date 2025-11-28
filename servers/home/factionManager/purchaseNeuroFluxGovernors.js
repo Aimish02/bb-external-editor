@@ -1,5 +1,9 @@
 // servers/home/factionManager/purchaseNeuroFluxGovernors.js
 async function main(ns) {
+
+  let debug = false; 
+  if (debug == true) {ns.ui.openTail();} 
+
   let player = ns.getPlayer();
   let playerFactions = player.factions;
   let factionWithNeurofluxGovernor;
@@ -16,7 +20,7 @@ async function main(ns) {
   if (factionWithNeurofluxGovernor != null) {
     while (ns.getServerMoneyAvailable("home") > ns.singularity.getAugmentationPrice("NeuroFlux Governor") && ns.singularity.getFactionRep(factionWithNeurofluxGovernor) > ns.singularity.getAugmentationRepReq("NeuroFlux Governor")) {
       ns.singularity.purchaseAugmentation(factionWithNeurofluxGovernor, "NeuroFlux Governor");
-      ns.tprint("Purchased NeuroFlux Governor from " + factionWithNeurofluxGovernor);
+      ns.print("Purchased NeuroFlux Governor from " + factionWithNeurofluxGovernor);
       await ns.sleep(10);
     }
   }
