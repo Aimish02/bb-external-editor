@@ -1,6 +1,17 @@
 // servers/home/sing-controller/sing-controller.js
 export async function main(ns) {
+  
   let host = ns.getHostname();
+  let debug = true;
+
+  ns.disableLog("sleep");
+  ns.disableLog("run");
+
+  
+  if (debug == true){
+    ns.ui.openTail();
+  }
+
 
   //Run scripts to run on startup, where order matters.
   ns.run("scanner/scanner.js");
@@ -31,7 +42,7 @@ export async function main(ns) {
   //Display timers to the user for awareness.
   let keys = Object.keys(timedActions)
   for (let key of keys) {
-      ns.tprint(key + " will run every " + timedActions[key].waitTime / 1e3 + " seconds.");
+      ns.print(key + " will run every " + timedActions[key].waitTime / 1e3 + " seconds.");
   }
   //----------
 
@@ -45,12 +56,13 @@ export async function main(ns) {
           ns.run(timedActions[key].action, 1);
           timedActions[key].lastRun = Date.now();
         } catch (err) {
-          ns.tprint("Error running " + timedActions[key].action);
-          ns.tprint(err);
+          ns.print("Error running " + timedActions[key].action);
+          ns.print(err);
         }
       }
     }
     await ns.sleep(10);
+    //ns.clearLog();
   }
   //----------
 

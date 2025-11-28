@@ -10,15 +10,15 @@ async function main(ns) {
   }
   let player = ns.getPlayer();
   let playerFactions = player.factions;
-  let playerOwnedAugmentations = ns.singularity.getOwnedAugmentations(true);
+  let playerOwnedAugmentations = ns.singularity.getOwnedAugmentations(true);//5GB
   let factionAvailableAugments = {};
   let playerLackingAugments = {};
   if (debug == true) {
     ns.tprint("DEBUG: Player Factions:");
     ns.tprint(playerFactions);
   }
-  if (ns.gang.inGang()) {
-    playerFactions = playerFactions.filter((faction) => faction != ns.gang.getGangInformation().faction);
+  if (ns.gang.inGang()) {//1GB
+    playerFactions = playerFactions.filter((faction) => faction != ns.gang.getGangInformation().faction);//2GB
   }
   if (debug == true) {
     ns.tprint("DEBUG: Player Factions minus gang:");
@@ -26,7 +26,7 @@ async function main(ns) {
   }
   for (let i in playerFactions) {
     let currentFaction = playerFactions[i];
-    factionAvailableAugments[currentFaction] = ns.singularity.getAugmentationsFromFaction(currentFaction);
+    factionAvailableAugments[currentFaction] = ns.singularity.getAugmentationsFromFaction(currentFaction);//5GB   
     if (debug == true) {
       ns.tprint("----------");
       ns.tprint("DEBUG: Faction, " + currentFaction + " has the following augments available:");
@@ -45,8 +45,8 @@ async function main(ns) {
     ns.tprint("----------");
   }
   function compareFavor(factionA, factionB) {
-    let factionAFavor = ns.singularity.getFactionFavor(factionA);
-    let factionBFavor = ns.singularity.getFactionFavor(factionB);
+    let factionAFavor = ns.singularity.getFactionFavor(factionA);//1GB
+    let factionBFavor = ns.singularity.getFactionFavor(factionB);//1GB
     return factionBFavor - factionAFavor;
   }
   downselectedFactions.sort(compareFavor);
@@ -67,7 +67,7 @@ async function main(ns) {
     }
     for (let j in playerLackingAugments[currentFaction]) {
       let augment = augmentList[j];
-      let augmentSuppliers = ns.singularity.getAugmentationFactions(augment);
+      let augmentSuppliers = ns.singularity.getAugmentationFactions(augment);//5GB
       let filteredSuppliers = downselectedFactions.filter((faction) => augmentSuppliers.includes(faction) && !factionSecondDownselect.includes(faction));
       if (filteredSuppliers.length > 1) {
         augmentsToRemove.push(augment);

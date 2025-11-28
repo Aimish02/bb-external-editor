@@ -24,13 +24,13 @@ async function main(ns) {
       let freeRam = server.maxRam - server.ramUsed;
       let batchRam = 1.75 * (HGW["hack"] + HGW["grow"] + HGW["weaken"]);
       if (debug == true) {
-        ns.tprint("Server: " + serverList[i]);
-        ns.tprint("Target: " + targetServ.hostname);
-        ns.tprint("Free Ram: " + freeRam);
-        ns.tprint("Batch Ram: " + batchRam);
-        ns.tprint("Hack: " + HGW["hack"]);
-        ns.tprint("Grow: " + HGW["grow"]);
-        ns.tprint("Weaken: " + HGW["weaken"]);
+        ns.tprint("Server: " + serverList[i] + "     Free Ram: " + freeRam + "     Batch Ram: " + batchRam );
+        ns.tprint("Target: " + targetServ.hostname + "     Security: " + targetServ.hackDifficulty + "/" + targetServ.minDifficulty + "     Money: " + ns.nFormat(targetServ.moneyAvailable, "$0.00a") + "/" + ns.nFormat(targetServ.moneyMax, "$0.00a"));
+        //ns.tprint("Free Ram: " + freeRam);
+        //ns.tprint("Batch Ram: " + batchRam);
+        ns.tprint("Hack: " + HGW["hack"] + "     Grow: " + HGW["grow"] + "     Weaken: " + HGW["weaken"]);
+        //ns.tprint("Grow: " + HGW["grow"]);
+        //ns.tprint("Weaken: " + HGW["weaken"]);
       }
       if (HGW["hack"] <= 0 || HGW["grow"] <= 0 || HGW["weaken"] <= 0 || freeRam < batchRam) {
         continue;

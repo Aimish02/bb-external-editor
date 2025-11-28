@@ -1,11 +1,16 @@
 // servers/home/purchaseServers/purchaseServers.js
 async function main(ns) {
-  ns.tprint("Purchasing Servers.");
+
+  let debug = false;
+  ns.disableLog("ALL");
+  if (debug ==true) {ns.ui.openTail();}
+
+  ns.print("Purchasing Servers.");
   const ram = ns.args[0] || 64;
   if (ns.getPurchasedServers().length < ns.getPurchasedServerLimit()) {
     while (ns.getPurchasedServers().length < ns.getPurchasedServerLimit() && ns.getServerMoneyAvailable("home") * 0.3 > ns.getPurchasedServerCost(ram)) {
       let hostname = ns.purchaseServer("pserv-" + ns.getPurchasedServers().length, ram);
-      ns.tprint("Purchased: " + hostname);
+      ns.print("Purchased: " + hostname);
       await ns.sleep(10);
     }
   } else if (ns.getPurchasedServers().length == ns.getPurchasedServerLimit()) {
@@ -17,7 +22,7 @@ async function main(ns) {
       let currentMoney = ns.getServerMoneyAvailable("home");
       if (server.maxRam < maxRam && upgradeCost < 0.3 * currentMoney) {
         ns.upgradePurchasedServer(purchasedServers[i], 2 * server.maxRam);
-        ns.tprint("Upgraded " + server.hostname + " to " + server.maxRam + "GB RAM.");
+        ns.print("Upgraded " + server.hostname + " to " + server.maxRam + "GB RAM.");
       }
     }
   }

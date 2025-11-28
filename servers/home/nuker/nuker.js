@@ -1,6 +1,12 @@
 // servers/home/nuker/nuker.js
 async function main(ns) {
-  ns.tprint("Nuker Running.");
+  
+  let debug = false;
+  ns.disableLog("ALL");
+  
+  if (debug ==true) {ns.ui.openTail();}
+
+  ns.print("Nuker Running.");
   let servList = JSON.parse(ns.read("data/optSortedList.json"));
   let hackablePorts = 0;
   if (ns.fileExists("BruteSSH.exe")) {
@@ -44,7 +50,7 @@ async function main(ns) {
       }
       try {
         await ns.nuke(servList[i]);
-        ns.tprint("Hack complete on " + servList[i] + ".");
+        ns.print("Hack complete on " + servList[i] + ".");
       } catch (err) {
       }
     } else {
